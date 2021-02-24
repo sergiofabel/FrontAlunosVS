@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="alunoForm" (ngSubmit)="onSubmitAluno()">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" class="form-control" formControlName="nome" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="form-control" formControlName="email" required>
+                </div>
+            </div>
+            <br>        
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <button class="btn btn-success" type="submit" [disabled]="!alunoForm.valid">Salvar</button>
+                    <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
