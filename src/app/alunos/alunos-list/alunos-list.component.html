@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success" routerLink="/alunos/new">Novo Aluno</button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class=" " >
+        <table class="table" >
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Actions</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let aluno of  alunos">
+                    <td scope="row">{{aluno.alunoId}}</td>
+                    <td>{{aluno.nome}}</td>
+                    <td>{{aluno.email}}</td>
+                    <td><button class="btn btn-warning" (click)="onAlunoSelected(aluno)">Editar</button></td>
+                    <td><button class="btn btn-danger" (click)="onAlunoDeleted(aluno.alunoId)">Deletar</button></td>
+                </tr>               
+            </tbody>
+        </table>   
+    </div>
+</div>
